@@ -33,18 +33,70 @@
                                 <color key="textColor" name="logo_introduce"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="비밀번호" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Ohz-LZ-1nZ">
+                                <rect key="frame" x="32.666666666666657" y="464" width="328" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="8g2-3F-M29"/>
+                                    <constraint firstAttribute="width" constant="328" id="NyX-F5-OZ2"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="아이디" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="SnS-b2-KPp">
+                                <rect key="frame" x="32.666666666666657" y="404" width="328" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="0MN-7Y-jxh"/>
+                                    <constraint firstAttribute="width" constant="328" id="Ry1-3P-ZQm"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GoG-Se-yYs">
+                                <rect key="frame" x="32.666666666666657" y="536" width="328" height="55"/>
+                                <color key="backgroundColor" name="button_unselected"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="55" id="C1k-ce-fvc"/>
+                                    <constraint firstAttribute="width" constant="328" id="xUG-e1-SoT"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal" title="로그인"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gRs-oK-Ms1">
+                                <rect key="frame" x="175.66666666666666" y="601" width="42" height="27"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="12"/>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal" title="회원가입">
+                                    <color key="titleColor" name="placeholder_text"/>
+                                </state>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="SnS-b2-KPp" firstAttribute="top" secondItem="T1w-oR-QFC" secondAttribute="bottom" constant="54" id="1rb-6L-tMh"/>
+                            <constraint firstItem="GoG-Se-yYs" firstAttribute="top" secondItem="Ohz-LZ-1nZ" secondAttribute="bottom" constant="22" id="Khz-M6-BS0"/>
                             <constraint firstItem="MCe-pe-nkd" firstAttribute="centerX" secondItem="k1o-AF-vZb" secondAttribute="centerX" id="MZq-el-V8G"/>
                             <constraint firstItem="k1o-AF-vZb" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="125" id="VlQ-mm-pDk"/>
                             <constraint firstItem="MCe-pe-nkd" firstAttribute="top" secondItem="k1o-AF-vZb" secondAttribute="bottom" constant="15" id="WHG-C9-zsu"/>
                             <constraint firstItem="T1w-oR-QFC" firstAttribute="top" secondItem="MCe-pe-nkd" secondAttribute="bottom" constant="15" id="WNz-4M-5Un"/>
+                            <constraint firstItem="Ohz-LZ-1nZ" firstAttribute="centerX" secondItem="k1o-AF-vZb" secondAttribute="centerX" id="ao7-Dy-Agl"/>
+                            <constraint firstItem="SnS-b2-KPp" firstAttribute="centerX" secondItem="k1o-AF-vZb" secondAttribute="centerX" id="fTF-1y-H3I"/>
+                            <constraint firstItem="GoG-Se-yYs" firstAttribute="centerX" secondItem="k1o-AF-vZb" secondAttribute="centerX" id="iJg-qZ-9xg"/>
                             <constraint firstItem="T1w-oR-QFC" firstAttribute="centerX" secondItem="k1o-AF-vZb" secondAttribute="centerX" id="iZU-dK-On3"/>
+                            <constraint firstItem="gRs-oK-Ms1" firstAttribute="centerX" secondItem="k1o-AF-vZb" secondAttribute="centerX" id="kBy-Ph-wkl"/>
+                            <constraint firstItem="Ohz-LZ-1nZ" firstAttribute="top" secondItem="SnS-b2-KPp" secondAttribute="bottom" constant="10" id="lmU-tK-SMN"/>
                             <constraint firstItem="k1o-AF-vZb" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="ogF-Px-u8e"/>
+                            <constraint firstItem="gRs-oK-Ms1" firstAttribute="top" secondItem="GoG-Se-yYs" secondAttribute="bottom" constant="10" id="wLf-Gj-q3f"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="idTextField" destination="SnS-b2-KPp" id="kCe-tI-8Tp"/>
+                        <outlet property="introduceLabel" destination="T1w-oR-QFC" id="uN3-OH-Nb1"/>
+                        <outlet property="loginBtn" destination="GoG-Se-yYs" id="DEf-B1-y5A"/>
+                        <outlet property="passwordTextField" destination="Ohz-LZ-1nZ" id="SOf-bu-p4h"/>
+                        <outlet property="signupBtn" destination="gRs-oK-Ms1" id="5aW-1g-WB0"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
@@ -54,8 +106,14 @@
     <resources>
         <image name="Pawsitive" width="186" height="32"/>
         <image name="logo" width="68" height="84"/>
+        <namedColor name="button_unselected">
+            <color red="0.77647058823529413" green="0.72156862745098038" blue="0.68235294117647061" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
         <namedColor name="logo_introduce">
             <color red="0.0" green="0.0" blue="0.0" alpha="0.40000000596046448" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="placeholder_text">
+            <color red="0.0" green="0.0" blue="0.0" alpha="0.30000001192092896" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
