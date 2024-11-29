@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		8B5059642CF9528F009202E6 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B5059632CF9528F009202E6 /* LoginViewController.swift */; };
+		8B5059662CF96A65009202E6 /* SignupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B5059652CF96A65009202E6 /* SignupViewController.swift */; };
+		8B5059682CF96E4C009202E6 /* SignupCompleteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B5059672CF96E4C009202E6 /* SignupCompleteViewController.swift */; };
 		8BA434442CF94AA70048B4EA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8BA4343B2CF94AA70048B4EA /* Assets.xcassets */; };
 		8BA434462CF94AA70048B4EA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8BA4343E2CF94AA70048B4EA /* LaunchScreen.storyboard */; };
 		8BA434472CF94AA70048B4EA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8BA434402CF94AA70048B4EA /* Main.storyboard */; };
@@ -26,6 +28,8 @@
 
 /* Begin PBXFileReference section */
 		8B5059632CF9528F009202E6 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		8B5059652CF96A65009202E6 /* SignupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupViewController.swift; sourceTree = "<group>"; };
+		8B5059672CF96E4C009202E6 /* SignupCompleteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupCompleteViewController.swift; sourceTree = "<group>"; };
 		8BA434222CF949750048B4EA /* Pawsitive.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Pawsitive.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8BA4343A2CF94AA70048B4EA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8BA4343B2CF94AA70048B4EA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -59,6 +63,8 @@
 			isa = PBXGroup;
 			children = (
 				8B5059632CF9528F009202E6 /* LoginViewController.swift */,
+				8B5059652CF96A65009202E6 /* SignupViewController.swift */,
+				8B5059672CF96E4C009202E6 /* SignupCompleteViewController.swift */,
 			);
 			path = Login;
 			sourceTree = "<group>";
@@ -195,6 +201,8 @@
 			files = (
 				8B5059642CF9528F009202E6 /* LoginViewController.swift in Sources */,
 				8BA434482CF94AA70048B4EA /* AppDelegate.swift in Sources */,
+				8B5059662CF96A65009202E6 /* SignupViewController.swift in Sources */,
+				8B5059682CF96E4C009202E6 /* SignupCompleteViewController.swift in Sources */,
 				8BA434492CF94AA70048B4EA /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
