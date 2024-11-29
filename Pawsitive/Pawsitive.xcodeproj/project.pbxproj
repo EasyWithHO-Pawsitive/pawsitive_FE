@@ -7,12 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8B5059642CF9528F009202E6 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B5059632CF9528F009202E6 /* LoginViewController.swift */; };
+		8B5059662CF96A65009202E6 /* SignupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B5059652CF96A65009202E6 /* SignupViewController.swift */; };
+		8B5059682CF96E4C009202E6 /* SignupCompleteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B5059672CF96E4C009202E6 /* SignupCompleteViewController.swift */; };
 		8BA434442CF94AA70048B4EA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8BA4343B2CF94AA70048B4EA /* Assets.xcassets */; };
 		8BA434462CF94AA70048B4EA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8BA4343E2CF94AA70048B4EA /* LaunchScreen.storyboard */; };
 		8BA434472CF94AA70048B4EA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8BA434402CF94AA70048B4EA /* Main.storyboard */; };
 		8BA434482CF94AA70048B4EA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BA4343A2CF94AA70048B4EA /* AppDelegate.swift */; };
 		8BA434492CF94AA70048B4EA /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BA434412CF94AA70048B4EA /* SceneDelegate.swift */; };
-		8BA4344A2CF94AA70048B4EA /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BA434422CF94AA70048B4EA /* ViewController.swift */; };
 		8BA434552CF94AE90048B4EA /* Pretendard-ExtraLight.otf in Resources */ = {isa = PBXBuildFile; fileRef = 8BA4344F2CF94AE90048B4EA /* Pretendard-ExtraLight.otf */; };
 		8BA434562CF94AE90048B4EA /* Pretendard-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 8BA434522CF94AE90048B4EA /* Pretendard-Regular.otf */; };
 		8BA434572CF94AE90048B4EA /* Pretendard-Black.otf in Resources */ = {isa = PBXBuildFile; fileRef = 8BA4344C2CF94AE90048B4EA /* Pretendard-Black.otf */; };
@@ -25,6 +27,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		8B5059632CF9528F009202E6 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		8B5059652CF96A65009202E6 /* SignupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupViewController.swift; sourceTree = "<group>"; };
+		8B5059672CF96E4C009202E6 /* SignupCompleteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupCompleteViewController.swift; sourceTree = "<group>"; };
 		8BA434222CF949750048B4EA /* Pawsitive.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Pawsitive.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8BA4343A2CF94AA70048B4EA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8BA4343B2CF94AA70048B4EA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -32,7 +37,6 @@
 		8BA4343D2CF94AA70048B4EA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		8BA4343F2CF94AA70048B4EA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		8BA434412CF94AA70048B4EA /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		8BA434422CF94AA70048B4EA /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		8BA4344C2CF94AE90048B4EA /* Pretendard-Black.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-Black.otf"; sourceTree = "<group>"; };
 		8BA4344D2CF94AE90048B4EA /* Pretendard-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-Bold.otf"; sourceTree = "<group>"; };
 		8BA4344E2CF94AE90048B4EA /* Pretendard-ExtraBold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-ExtraBold.otf"; sourceTree = "<group>"; };
@@ -55,6 +59,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		8B5059622CF95261009202E6 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				8B5059632CF9528F009202E6 /* LoginViewController.swift */,
+				8B5059652CF96A65009202E6 /* SignupViewController.swift */,
+				8B5059672CF96E4C009202E6 /* SignupCompleteViewController.swift */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
 		8BA434192CF949750048B4EA = {
 			isa = PBXGroup;
 			children = (
@@ -74,6 +88,7 @@
 		8BA434432CF94AA70048B4EA /* Pawsitive */ = {
 			isa = PBXGroup;
 			children = (
+				8B5059622CF95261009202E6 /* Login */,
 				8BA4344B2CF94AC50048B4EA /* Font */,
 				8BA4343A2CF94AA70048B4EA /* AppDelegate.swift */,
 				8BA4343B2CF94AA70048B4EA /* Assets.xcassets */,
@@ -81,7 +96,6 @@
 				8BA4343E2CF94AA70048B4EA /* LaunchScreen.storyboard */,
 				8BA434402CF94AA70048B4EA /* Main.storyboard */,
 				8BA434412CF94AA70048B4EA /* SceneDelegate.swift */,
-				8BA434422CF94AA70048B4EA /* ViewController.swift */,
 			);
 			path = Pawsitive;
 			sourceTree = "<group>";
@@ -185,9 +199,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8B5059642CF9528F009202E6 /* LoginViewController.swift in Sources */,
 				8BA434482CF94AA70048B4EA /* AppDelegate.swift in Sources */,
+				8B5059662CF96A65009202E6 /* SignupViewController.swift in Sources */,
+				8B5059682CF96E4C009202E6 /* SignupCompleteViewController.swift in Sources */,
 				8BA434492CF94AA70048B4EA /* SceneDelegate.swift in Sources */,
-				8BA4344A2CF94AA70048B4EA /* ViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
