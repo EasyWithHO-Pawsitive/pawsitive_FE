@@ -6,30 +6,43 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		8BA434442CF94AA70048B4EA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8BA4343B2CF94AA70048B4EA /* Assets.xcassets */; };
+		8BA434462CF94AA70048B4EA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8BA4343E2CF94AA70048B4EA /* LaunchScreen.storyboard */; };
+		8BA434472CF94AA70048B4EA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8BA434402CF94AA70048B4EA /* Main.storyboard */; };
+		8BA434482CF94AA70048B4EA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BA4343A2CF94AA70048B4EA /* AppDelegate.swift */; };
+		8BA434492CF94AA70048B4EA /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BA434412CF94AA70048B4EA /* SceneDelegate.swift */; };
+		8BA4344A2CF94AA70048B4EA /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BA434422CF94AA70048B4EA /* ViewController.swift */; };
+		8BA434552CF94AE90048B4EA /* Pretendard-ExtraLight.otf in Resources */ = {isa = PBXBuildFile; fileRef = 8BA4344F2CF94AE90048B4EA /* Pretendard-ExtraLight.otf */; };
+		8BA434562CF94AE90048B4EA /* Pretendard-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 8BA434522CF94AE90048B4EA /* Pretendard-Regular.otf */; };
+		8BA434572CF94AE90048B4EA /* Pretendard-Black.otf in Resources */ = {isa = PBXBuildFile; fileRef = 8BA4344C2CF94AE90048B4EA /* Pretendard-Black.otf */; };
+		8BA434582CF94AE90048B4EA /* Pretendard-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = 8BA434512CF94AE90048B4EA /* Pretendard-Medium.otf */; };
+		8BA434592CF94AE90048B4EA /* Pretendard-Light.otf in Resources */ = {isa = PBXBuildFile; fileRef = 8BA434502CF94AE90048B4EA /* Pretendard-Light.otf */; };
+		8BA4345A2CF94AE90048B4EA /* Pretendard-SemiBold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 8BA434532CF94AE90048B4EA /* Pretendard-SemiBold.otf */; };
+		8BA4345B2CF94AE90048B4EA /* Pretendard-ExtraBold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 8BA4344E2CF94AE90048B4EA /* Pretendard-ExtraBold.otf */; };
+		8BA4345C2CF94AE90048B4EA /* Pretendard-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 8BA4344D2CF94AE90048B4EA /* Pretendard-Bold.otf */; };
+		8BA4345D2CF94AE90048B4EA /* Pretendard-Thin.otf in Resources */ = {isa = PBXBuildFile; fileRef = 8BA434542CF94AE90048B4EA /* Pretendard-Thin.otf */; };
+/* End PBXBuildFile section */
+
 /* Begin PBXFileReference section */
 		8BA434222CF949750048B4EA /* Pawsitive.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Pawsitive.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		8BA4343A2CF94AA70048B4EA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		8BA4343B2CF94AA70048B4EA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		8BA4343C2CF94AA70048B4EA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8BA4343D2CF94AA70048B4EA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		8BA4343F2CF94AA70048B4EA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		8BA434412CF94AA70048B4EA /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		8BA434422CF94AA70048B4EA /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		8BA4344C2CF94AE90048B4EA /* Pretendard-Black.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-Black.otf"; sourceTree = "<group>"; };
+		8BA4344D2CF94AE90048B4EA /* Pretendard-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-Bold.otf"; sourceTree = "<group>"; };
+		8BA4344E2CF94AE90048B4EA /* Pretendard-ExtraBold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-ExtraBold.otf"; sourceTree = "<group>"; };
+		8BA4344F2CF94AE90048B4EA /* Pretendard-ExtraLight.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-ExtraLight.otf"; sourceTree = "<group>"; };
+		8BA434502CF94AE90048B4EA /* Pretendard-Light.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-Light.otf"; sourceTree = "<group>"; };
+		8BA434512CF94AE90048B4EA /* Pretendard-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-Medium.otf"; sourceTree = "<group>"; };
+		8BA434522CF94AE90048B4EA /* Pretendard-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-Regular.otf"; sourceTree = "<group>"; };
+		8BA434532CF94AE90048B4EA /* Pretendard-SemiBold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-SemiBold.otf"; sourceTree = "<group>"; };
+		8BA434542CF94AE90048B4EA /* Pretendard-Thin.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-Thin.otf"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
-
-/* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
-		8BA434342CF949760048B4EA /* Exceptions for "Pawsitive" folder in "Pawsitive" target */ = {
-			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
-			membershipExceptions = (
-				Info.plist,
-			);
-			target = 8BA434212CF949750048B4EA /* Pawsitive */;
-		};
-/* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
-
-/* Begin PBXFileSystemSynchronizedRootGroup section */
-		8BA434242CF949750048B4EA /* Pawsitive */ = {
-			isa = PBXFileSystemSynchronizedRootGroup;
-			exceptions = (
-				8BA434342CF949760048B4EA /* Exceptions for "Pawsitive" folder in "Pawsitive" target */,
-			);
-			path = Pawsitive;
-			sourceTree = "<group>";
-		};
-/* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		8BA4341F2CF949750048B4EA /* Frameworks */ = {
@@ -45,7 +58,7 @@
 		8BA434192CF949750048B4EA = {
 			isa = PBXGroup;
 			children = (
-				8BA434242CF949750048B4EA /* Pawsitive */,
+				8BA434432CF94AA70048B4EA /* Pawsitive */,
 				8BA434232CF949750048B4EA /* Products */,
 			);
 			sourceTree = "<group>";
@@ -56,6 +69,37 @@
 				8BA434222CF949750048B4EA /* Pawsitive.app */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		8BA434432CF94AA70048B4EA /* Pawsitive */ = {
+			isa = PBXGroup;
+			children = (
+				8BA4344B2CF94AC50048B4EA /* Font */,
+				8BA4343A2CF94AA70048B4EA /* AppDelegate.swift */,
+				8BA4343B2CF94AA70048B4EA /* Assets.xcassets */,
+				8BA4343C2CF94AA70048B4EA /* Info.plist */,
+				8BA4343E2CF94AA70048B4EA /* LaunchScreen.storyboard */,
+				8BA434402CF94AA70048B4EA /* Main.storyboard */,
+				8BA434412CF94AA70048B4EA /* SceneDelegate.swift */,
+				8BA434422CF94AA70048B4EA /* ViewController.swift */,
+			);
+			path = Pawsitive;
+			sourceTree = "<group>";
+		};
+		8BA4344B2CF94AC50048B4EA /* Font */ = {
+			isa = PBXGroup;
+			children = (
+				8BA4344C2CF94AE90048B4EA /* Pretendard-Black.otf */,
+				8BA4344D2CF94AE90048B4EA /* Pretendard-Bold.otf */,
+				8BA4344E2CF94AE90048B4EA /* Pretendard-ExtraBold.otf */,
+				8BA4344F2CF94AE90048B4EA /* Pretendard-ExtraLight.otf */,
+				8BA434502CF94AE90048B4EA /* Pretendard-Light.otf */,
+				8BA434512CF94AE90048B4EA /* Pretendard-Medium.otf */,
+				8BA434522CF94AE90048B4EA /* Pretendard-Regular.otf */,
+				8BA434532CF94AE90048B4EA /* Pretendard-SemiBold.otf */,
+				8BA434542CF94AE90048B4EA /* Pretendard-Thin.otf */,
+			);
+			path = Font;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -72,9 +116,6 @@
 			buildRules = (
 			);
 			dependencies = (
-			);
-			fileSystemSynchronizedGroups = (
-				8BA434242CF949750048B4EA /* Pawsitive */,
 			);
 			name = Pawsitive;
 			packageProductDependencies = (
@@ -122,6 +163,18 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8BA434442CF94AA70048B4EA /* Assets.xcassets in Resources */,
+				8BA434462CF94AA70048B4EA /* LaunchScreen.storyboard in Resources */,
+				8BA434552CF94AE90048B4EA /* Pretendard-ExtraLight.otf in Resources */,
+				8BA434562CF94AE90048B4EA /* Pretendard-Regular.otf in Resources */,
+				8BA434572CF94AE90048B4EA /* Pretendard-Black.otf in Resources */,
+				8BA434582CF94AE90048B4EA /* Pretendard-Medium.otf in Resources */,
+				8BA434592CF94AE90048B4EA /* Pretendard-Light.otf in Resources */,
+				8BA4345A2CF94AE90048B4EA /* Pretendard-SemiBold.otf in Resources */,
+				8BA4345B2CF94AE90048B4EA /* Pretendard-ExtraBold.otf in Resources */,
+				8BA4345C2CF94AE90048B4EA /* Pretendard-Bold.otf in Resources */,
+				8BA4345D2CF94AE90048B4EA /* Pretendard-Thin.otf in Resources */,
+				8BA434472CF94AA70048B4EA /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -132,10 +185,32 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8BA434482CF94AA70048B4EA /* AppDelegate.swift in Sources */,
+				8BA434492CF94AA70048B4EA /* SceneDelegate.swift in Sources */,
+				8BA4344A2CF94AA70048B4EA /* ViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		8BA4343E2CF94AA70048B4EA /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				8BA4343D2CF94AA70048B4EA /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		8BA434402CF94AA70048B4EA /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				8BA4343F2CF94AA70048B4EA /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		8BA434362CF949760048B4EA /* Debug */ = {
