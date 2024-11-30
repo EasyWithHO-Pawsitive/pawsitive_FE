@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Alamofire
 
 class AdoptDetailViewController: UIViewController {
     
@@ -35,11 +36,16 @@ class AdoptDetailViewController: UIViewController {
     // button
     @IBOutlet weak var speciesBtn: UIButton!
     
+    var postId: Int? // 전달받을 postId
+    var adoptImages = ["adopt1", "adopt2", "adopt3", "adopt4", "adopt5"]
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         setupFont()
         setupUI()
+        
+        fetchAdoptionDetail()
     }
     
     private func setupFont() {
@@ -70,13 +76,51 @@ class AdoptDetailViewController: UIViewController {
         speciesBtn.layer.borderColor = UIColor.cityLabel.cgColor
     }
     
-    // action
-    @IBAction func backBtn(_ sender: Any) {
-        guard let adoptVC = storyboard?.instantiateViewController(withIdentifier: "AdoptViewController") as? AdoptViewController else {
+    private func fetchAdoptionDetail() {
+        guard let postId = postId else {
+            print("postId가 전달되지 않았습니다.")
             return
         }
-        adoptVC.modalPresentationStyle = .fullScreen
-        present(adoptVC, animated: true)
+        
+        let endpoint = "/adoption/\(postId)"
+        APIClient.getRequest(endpoint: endpoint, parameters: nil) { (result: Result<AdoptionDetailResponse, AFError>) in
+            switch result {
+            case .success(let response):
+                print("API 응답 데이터: \(response)") // JSON 디버깅
+                if response.isSuccess, let adoptionDetail = response.result {
+                    DispatchQueue.main.async {
+                        self.updateUI(with: adoptionDetail)
+                    }
+                } else {
+                    print("입양 상세 정보 요청 실패: \(response.message)")
+                }
+            case .failure(let error):
+                print("API 호출 실패: \(error.localizedDescription)")
+            }
+        }
+    }
+    
+    private func updateUI(with detail: AdoptionDetail?) {
+        guard let detail = detail else { return }
+        
+        titleLabel.text = detail.title
+        speciesDetailLabel.text = detail.specType
+        genderDetailLabel.text = detail.gender
+        neuterLabel.text = detail.neutering ? "(중성화 O)" : "(중성화 X)"
+        ageDetailLabel.text = detail.age
+        specialContentLabel.text = detail.description
+        shelterDetailLable.text = detail.shelterName
+        dateDetailLabel.text = detail.createdAt
+        managerDetailLabel.text = detail.mangerName // "mangerName" 사용
+        phoneDetailLabel.text = detail.phone
+        
+        let imageIndex = (detail.id - 1) % adoptImages.count
+        adoptImg.image = UIImage(named: adoptImages[imageIndex])
+    }
+    
+    // action
+    @IBAction func backBtn(_ sender: Any) {
+        self.dismiss(animated: true, completion: nil)
     }
     
 }

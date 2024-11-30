@@ -110,6 +110,13 @@ extension AdoptViewController: UICollectionViewDelegateFlowLayout {
 // MARK: - UICollectionViewDelegate
 extension AdoptViewController: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        print("Selected Adoption: \(adoptions[indexPath.row].title)")
+        guard let detailVC = storyboard?.instantiateViewController(withIdentifier: "AdoptDetailViewController") as? AdoptDetailViewController else {
+            return
+        }
+        
+        // 선택한 입양 ID를 전달
+        detailVC.postId = adoptions[indexPath.row].id
+        detailVC.modalPresentationStyle = .fullScreen
+        present(detailVC, animated: true)
     }
 }

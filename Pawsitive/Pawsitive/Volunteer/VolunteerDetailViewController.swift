@@ -144,11 +144,7 @@ class VolunteerDetailViewController: UIViewController {
     
     // action
     @IBAction func backBtn(_ sender: Any) {
-        guard let volunteerVC = storyboard?.instantiateViewController(withIdentifier: "VolunteerViewController") as? VolunteerViewController else {
-            return
-        }
-        volunteerVC.modalPresentationStyle = .fullScreen
-        present(volunteerVC, animated: true)
+        self.dismiss(animated: true, completion: nil)
     }
     
     @IBAction func tapApply(_ sender: Any) {
@@ -194,7 +190,11 @@ class VolunteerDetailViewController: UIViewController {
                             message: "봉사 신청이 성공적으로 완료되었습니다.",
                             preferredStyle: .alert
                         )
-                        successAlert.addAction(UIAlertAction(title: "확인", style: .default))
+                        let confirmAction = UIAlertAction(title: "확인", style: .default) { _ in
+                            self.navigateToTabIndexOne()
+                        }
+                        confirmAction.setValue(UIColor.okAlert, forKey: "titleTextColor")
+                        successAlert.addAction(confirmAction)
                         self.present(successAlert, animated: true)
                     } else {
                         let failureAlert = UIAlertController(
@@ -219,5 +219,14 @@ class VolunteerDetailViewController: UIViewController {
                 }
             }
         }
+    }
+    
+    private func navigateToTabIndexOne() {
+        guard let tabBarController = storyboard?.instantiateViewController(withIdentifier: "CustomTabBarViewController") as? CustomTabBarViewController else {
+            return
+        }
+        tabBarController.selectedIndex = 1 // Index 1로 설정
+        tabBarController.modalPresentationStyle = .fullScreen
+        present(tabBarController, animated: true)
     }
 }
