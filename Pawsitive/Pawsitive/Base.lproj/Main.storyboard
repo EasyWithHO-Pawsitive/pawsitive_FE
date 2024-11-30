@@ -1318,6 +1318,9 @@
                                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
                                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                                 <state key="normal" title="등록하기"/>
+                                                <connections>
+                                                    <action selector="registerVolunteer:" destination="le6-3s-NcE" eventType="touchUpInside" id="bav-JJ-xob"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UYT-q3-Snm">
                                                 <rect key="frame" x="32" y="82" width="328" height="45"/>

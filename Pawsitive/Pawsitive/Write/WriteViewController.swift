@@ -32,17 +32,7 @@ class WriteViewController: UIViewController {
     @IBOutlet weak var selectShelterBtn: UIButton!
     @IBOutlet weak var registerBtn: UIButton!
 
-    let shelterInfos = [
-        ["id": 1, "name": "(사)동물권자유너와"],
-        ["id": 2, "name": "동물자원과(유기동물보호소)"],
-        ["id": 3, "name": "경기도 도우미견나눔센터"],
-        ["id": 4, "name": "서초구립 방배유스센터"],
-        ["id": 5, "name": "안다"],
-        ["id": 6, "name": "사천시 동물보호센터"],
-        ["id": 7, "name": "통영시 동물보호센터"],
-        ["id": 8, "name": "옥천시 동물보호센터"]
-    ]
-    
+    var shelterInfos: [Shelter] = [] // 보호소 리스트 데이터
     var pickerView = UIPickerView()
     var toolbar: UIToolbar!
     var selectedShelter: String?
@@ -52,7 +42,21 @@ class WriteViewController: UIViewController {
         
         setupFont()
         setupUI()
+        
         setupPickerView()
+        loadShelters() // 보호소 데이터를 로드
+        
+        // 초기 버튼 색상 설정
+        registerBtn.backgroundColor = .buttonUnselected
+        registerBtn.isEnabled = false
+        
+        // TextField Delegate 설정
+        titleTextField.delegate = self
+        dateTextField.delegate = self
+        numberTextField.delegate = self
+        startTextField.delegate = self
+        finishTextField.delegate = self
+        detailTextField.delegate = self
     }
     
     private func setupFont() {
@@ -200,6 +204,43 @@ class WriteViewController: UIViewController {
         ])
     }
     
+    private func loadShelters() {
+        APIClient.getRequest(endpoint: "/shelter") { (result: Result<ShelterResponse, AFError>) in
+            switch result {
+            case .success(let response):
+                if response.isSuccess {
+                    self.shelterInfos = response.result.shelterInfos
+                    self.pickerView.reloadAllComponents() // UIPickerView 새로고침
+                } else {
+                    print("Error: \(response.message)")
+                }
+            case .failure(let error):
+                print("Error: \(error.localizedDescription)")
+                
+                // 원시 응답 데이터를 출력
+                if let data = error.underlyingError as? URLError {
+                    print("Underlying Error: \(data)")
+                }
+            }
+        }
+    }
+    
+    private func updateRegisterButtonState() {
+        let isShelterSelected = selectedShelter != nil
+        let isTitleValid = !(titleTextField.text?.isEmpty ?? true)
+        let isDateValid = !(dateTextField.text?.isEmpty ?? true)
+        let isNumberValid = !(numberTextField.text?.isEmpty ?? true) && Int(numberTextField.text ?? "") != nil
+        let isStartTimeValid = !(startTextField.text?.isEmpty ?? true)
+        let isEndTimeValid = !(finishTextField.text?.isEmpty ?? true)
+        let isContentValid = !(detailTextField.text?.isEmpty ?? true)
+
+        let allFieldsValid = isShelterSelected && isTitleValid && isDateValid &&
+                             isNumberValid && isStartTimeValid && isEndTimeValid && isContentValid
+
+        registerBtn.backgroundColor = allFieldsValid ? .buttonSelected : .buttonUnselected
+        registerBtn.isEnabled = allFieldsValid
+    }
+    
     @IBAction func tapShelter(_ sender: Any) {
         pickerView.isHidden = false
         toolbar.isHidden = false
@@ -208,15 +249,78 @@ class WriteViewController: UIViewController {
     @objc func donePicking() {
         // 선택한 값 설정
         selectShelterBtn.setTitle(selectedShelter ?? "보호소를 선택하세요", for: .normal)
-        
-        // 버튼 텍스트 색상을 검정색으로 설정
         selectShelterBtn.setTitleColor(.black, for: .normal)
         
         // PickerView 및 Toolbar 숨기기
         pickerView.isHidden = true
         toolbar.isHidden = true
+        
+        updateRegisterButtonState()
     }
     
+    private func postVolunteer() {
+        // 유효성 검사
+        guard let shelter = shelterInfos.first(where: { $0.name == selectedShelter }),
+              let title = titleTextField.text, !title.isEmpty,
+              let date = dateTextField.text, !date.isEmpty,
+              let numberOfStaffsText = numberTextField.text, let numberOfStaffs = Int(numberOfStaffsText),
+              let startTime = startTextField.text, !startTime.isEmpty,
+              let endTime = finishTextField.text, !endTime.isEmpty,
+              let content = detailTextField.text, !content.isEmpty else {
+            print("모든 필드를 입력해주세요.")
+            return
+        }
+        
+        // 요청 데이터 생성
+        let request = VolunteerPostRequest(
+            shelterId: shelter.id,
+            title: title,
+            volunteerDate: date,
+            numberOfStaffs: numberOfStaffs,
+            startTime: startTime,
+            endTime: endTime,
+            content: content
+        )
+        
+        // API 요청
+        APIClient.postRequest(endpoint: "/volunteer/post", parameters: request) { (result: Result<VolunteerPostResponse, AFError>) in
+            switch result {
+            case .success(let response):
+                if response.isSuccess {
+                    print("봉사 게시글 작성 성공: ID \(response.result?.id ?? -1)")
+                    self.showAlert(title: "성공", message: "봉사 게시글이 등록되었습니다.") {
+                        if let tabBarController = self.tabBarController as? CustomTabBarViewController {
+                            tabBarController.selectedIndex = 2
+                        }
+                    }
+                } else {
+                    print("서버 에러: \(response.message)")
+                    self.showAlert(title: "오류", message: response.message)
+                }
+            case .failure(let error):
+                print("요청 실패: \(error.localizedDescription)")
+                self.showAlert(title: "오류", message: "서버와 통신에 실패했습니다.")
+            }
+        }
+    }
+    
+    @IBAction func registerVolunteer(_ sender: Any) {
+        postVolunteer()
+    }
+    
+    // 알림창 표시 메서드
+    private func showAlert(title: String, message: String, completion: (() -> Void)? = nil) {
+        let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        
+        // 확인 액션 추가
+        let confirmAction = UIAlertAction(title: "확인", style: .default) { _ in
+            completion?()
+        }
+        confirmAction.setValue(UIColor.okAlert, forKey: "titleTextColor") // 버튼 색상 적용
+        alert.addAction(confirmAction)
+        
+        present(alert, animated: true, completion: nil)
+    }
 }
 
 // MARK: - UIPickerViewDelegate, UIPickerViewDataSource
@@ -230,10 +334,20 @@ extension WriteViewController: UIPickerViewDelegate, UIPickerViewDataSource {
     }
     
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        return shelterInfos[row]["name"] as? String
+        return shelterInfos[row].name
     }
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-        selectedShelter = shelterInfos[row]["name"] as? String
+        selectedShelter = shelterInfos[row].name
+        updateRegisterButtonState()
+    }
+}
+
+extension WriteViewController: UITextFieldDelegate {
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+        DispatchQueue.main.async {
+            self.updateRegisterButtonState()
+        }
+        return true
     }
 }
