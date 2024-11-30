@@ -41,6 +41,9 @@ extension APIClient {
         let headers = getHeaders()
         
         AF.request(url, method: .post, parameters: parameters, encoder: JSONParameterEncoder.default, headers: headers).responseDecodable(of: T.self) { response in
+            if let data = response.data {
+                print("Raw Response Data: \(String(data: data, encoding: .utf8) ?? "Invalid data")")
+            }
             completion(response.result)
         }
     }

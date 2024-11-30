@@ -31,6 +31,8 @@
 		8BA4345D2CF94AE90048B4EA /* Pretendard-Thin.otf in Resources */ = {isa = PBXBuildFile; fileRef = 8BA434542CF94AE90048B4EA /* Pretendard-Thin.otf */; };
 		8BA4A0D32CFAC51200352665 /* AdoptDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BA4A0D22CFAC51200352665 /* AdoptDetailViewController.swift */; };
 		8BA4A0D72CFAD6A800352665 /* API+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BA4A0D62CFAD6A800352665 /* API+Extension.swift */; };
+		8BA4A0D92CFAE1F400352665 /* SignupDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BA4A0D82CFAE1F400352665 /* SignupDataModel.swift */; };
+		8BA4A0DB2CFAE9DC00352665 /* LoginDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BA4A0DA2CFAE9DC00352665 /* LoginDataModel.swift */; };
 		8BD4665E2CFAAA330023ED9D /* VolunteerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BD4665D2CFAAA330023ED9D /* VolunteerViewController.swift */; };
 		8BD466612CFAAB470023ED9D /* VolunteerListCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8BD466602CFAAB470023ED9D /* VolunteerListCollectionViewCell.xib */; };
 		8BD466622CFAAB470023ED9D /* VolunteerListCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BD4665F2CFAAB470023ED9D /* VolunteerListCollectionViewCell.swift */; };
@@ -69,6 +71,8 @@
 		8BA434542CF94AE90048B4EA /* Pretendard-Thin.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-Thin.otf"; sourceTree = "<group>"; };
 		8BA4A0D22CFAC51200352665 /* AdoptDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdoptDetailViewController.swift; sourceTree = "<group>"; };
 		8BA4A0D62CFAD6A800352665 /* API+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "API+Extension.swift"; sourceTree = "<group>"; };
+		8BA4A0D82CFAE1F400352665 /* SignupDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupDataModel.swift; sourceTree = "<group>"; };
+		8BA4A0DA2CFAE9DC00352665 /* LoginDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginDataModel.swift; sourceTree = "<group>"; };
 		8BD4665D2CFAAA330023ED9D /* VolunteerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VolunteerViewController.swift; sourceTree = "<group>"; };
 		8BD4665F2CFAAB470023ED9D /* VolunteerListCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VolunteerListCollectionViewCell.swift; sourceTree = "<group>"; };
 		8BD466602CFAAB470023ED9D /* VolunteerListCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = VolunteerListCollectionViewCell.xib; sourceTree = "<group>"; };
@@ -104,6 +108,8 @@
 				8B5059632CF9528F009202E6 /* LoginViewController.swift */,
 				8B5059652CF96A65009202E6 /* SignupViewController.swift */,
 				8B5059672CF96E4C009202E6 /* SignupCompleteViewController.swift */,
+				8BA4A0D82CFAE1F400352665 /* SignupDataModel.swift */,
+				8BA4A0DA2CFAE9DC00352665 /* LoginDataModel.swift */,
 			);
 			path = Login;
 			sourceTree = "<group>";
@@ -331,6 +337,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8BA4A0D32CFAC51200352665 /* AdoptDetailViewController.swift in Sources */,
+				8BA4A0D92CFAE1F400352665 /* SignupDataModel.swift in Sources */,
 				8BD4666B2CFABB580023ED9D /* AdoptListCollectionViewCell.swift in Sources */,
 				8B5059642CF9528F009202E6 /* LoginViewController.swift in Sources */,
 				8BD466622CFAAB470023ED9D /* VolunteerListCollectionViewCell.swift in Sources */,
@@ -341,6 +348,7 @@
 				8BD466642CFAB2A70023ED9D /* VolunteerDetailViewController.swift in Sources */,
 				8B5059662CF96A65009202E6 /* SignupViewController.swift in Sources */,
 				8BD466672CFAB9C40023ED9D /* AdoptViewController.swift in Sources */,
+				8BA4A0DB2CFAE9DC00352665 /* LoginDataModel.swift in Sources */,
 				8B5059682CF96E4C009202E6 /* SignupCompleteViewController.swift in Sources */,
 				8B5059712CF97763009202E6 /* HomeViewController.swift in Sources */,
 				8BA434492CF94AA70048B4EA /* SceneDelegate.swift in Sources */,

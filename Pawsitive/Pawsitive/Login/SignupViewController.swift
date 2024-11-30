@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Alamofire
 
 class SignupViewController: UIViewController {
 
@@ -151,11 +152,50 @@ class SignupViewController: UIViewController {
     
     // action
     @IBAction func tapSignup(_ sender: Any) {
-        guard let signupCompleteVC = storyboard?.instantiateViewController(withIdentifier: "SignupCompleteViewController") as? SignupCompleteViewController else {
-            return
+        guard let id = idTextField.text,
+              let password = passwordTextField.text,
+              let name = nameTextField.text,
+              let birth = birthTextField.text,
+              let phone = phoneNumberTextField.text else { return }
+        
+        // Request Body 생성
+        let requestBody = [
+            "id": id,
+            "password": password,
+            "name": name,
+            "birth": birth,
+            "phone": phone
+        ]
+        
+        // API 호출
+        APIClient.postRequest(endpoint: "/user/signup", parameters: requestBody) { (result: Result<SignupResponseBody, AFError>) in
+            switch result {
+            case .success(let response):
+                if response.isSuccess {
+                    DispatchQueue.main.async {
+                        self.moveToSignupComplete()
+                    }
+                } else {
+                    DispatchQueue.main.async {
+                        self.debugFailure(message: response.message)
+                    }
+                }
+            case .failure(let error):
+                DispatchQueue.main.async {
+                    self.debugFailure(message: error.localizedDescription)
+                }
+            }
         }
-        signupCompleteVC.modalPresentationStyle = .fullScreen
-        present(signupCompleteVC, animated: true)
     }
     
+    private func moveToSignupComplete() {
+        guard let signupCompleteVC = self.storyboard?.instantiateViewController(withIdentifier: "SignupCompleteViewController") as? SignupCompleteViewController else { return }
+        signupCompleteVC.modalPresentationStyle = .fullScreen
+        self.present(signupCompleteVC, animated: true)
+    }
+    
+    private func debugFailure(message: String) {
+        // 실패 디버깅 정보를 출력
+        print("회원가입 실패: \(message)")
+    }
 }
