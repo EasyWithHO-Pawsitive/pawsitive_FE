@@ -3,10 +3,11 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 77;
+	objectVersion = 56;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		458AE67685BBB23A5A26921A /* Pods_Pawsitive.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 39F3912534A41FFADE65281C /* Pods_Pawsitive.framework */; };
 		8B5059642CF9528F009202E6 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B5059632CF9528F009202E6 /* LoginViewController.swift */; };
 		8B5059662CF96A65009202E6 /* SignupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B5059652CF96A65009202E6 /* SignupViewController.swift */; };
 		8B5059682CF96E4C009202E6 /* SignupCompleteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B5059672CF96E4C009202E6 /* SignupCompleteViewController.swift */; };
@@ -29,6 +30,9 @@
 		8BA4345C2CF94AE90048B4EA /* Pretendard-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 8BA4344D2CF94AE90048B4EA /* Pretendard-Bold.otf */; };
 		8BA4345D2CF94AE90048B4EA /* Pretendard-Thin.otf in Resources */ = {isa = PBXBuildFile; fileRef = 8BA434542CF94AE90048B4EA /* Pretendard-Thin.otf */; };
 		8BA4A0D32CFAC51200352665 /* AdoptDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BA4A0D22CFAC51200352665 /* AdoptDetailViewController.swift */; };
+		8BA4A0D72CFAD6A800352665 /* API+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BA4A0D62CFAD6A800352665 /* API+Extension.swift */; };
+		8BA4A0D92CFAE1F400352665 /* SignupDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BA4A0D82CFAE1F400352665 /* SignupDataModel.swift */; };
+		8BA4A0DB2CFAE9DC00352665 /* LoginDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BA4A0DA2CFAE9DC00352665 /* LoginDataModel.swift */; };
 		8BD4665E2CFAAA330023ED9D /* VolunteerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BD4665D2CFAAA330023ED9D /* VolunteerViewController.swift */; };
 		8BD466612CFAAB470023ED9D /* VolunteerListCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8BD466602CFAAB470023ED9D /* VolunteerListCollectionViewCell.xib */; };
 		8BD466622CFAAB470023ED9D /* VolunteerListCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BD4665F2CFAAB470023ED9D /* VolunteerListCollectionViewCell.swift */; };
@@ -39,6 +43,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		39F3912534A41FFADE65281C /* Pods_Pawsitive.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Pawsitive.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		3BD287AB63CED8A3946DFB30 /* Pods-Pawsitive.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Pawsitive.debug.xcconfig"; path = "Target Support Files/Pods-Pawsitive/Pods-Pawsitive.debug.xcconfig"; sourceTree = "<group>"; };
+		42DB14F3EB5535AA15B42868 /* Pods-Pawsitive.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Pawsitive.release.xcconfig"; path = "Target Support Files/Pods-Pawsitive/Pods-Pawsitive.release.xcconfig"; sourceTree = "<group>"; };
 		8B5059632CF9528F009202E6 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		8B5059652CF96A65009202E6 /* SignupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupViewController.swift; sourceTree = "<group>"; };
 		8B5059672CF96E4C009202E6 /* SignupCompleteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupCompleteViewController.swift; sourceTree = "<group>"; };
@@ -63,6 +70,9 @@
 		8BA434532CF94AE90048B4EA /* Pretendard-SemiBold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-SemiBold.otf"; sourceTree = "<group>"; };
 		8BA434542CF94AE90048B4EA /* Pretendard-Thin.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-Thin.otf"; sourceTree = "<group>"; };
 		8BA4A0D22CFAC51200352665 /* AdoptDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdoptDetailViewController.swift; sourceTree = "<group>"; };
+		8BA4A0D62CFAD6A800352665 /* API+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "API+Extension.swift"; sourceTree = "<group>"; };
+		8BA4A0D82CFAE1F400352665 /* SignupDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupDataModel.swift; sourceTree = "<group>"; };
+		8BA4A0DA2CFAE9DC00352665 /* LoginDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginDataModel.swift; sourceTree = "<group>"; };
 		8BD4665D2CFAAA330023ED9D /* VolunteerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VolunteerViewController.swift; sourceTree = "<group>"; };
 		8BD4665F2CFAAB470023ED9D /* VolunteerListCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VolunteerListCollectionViewCell.swift; sourceTree = "<group>"; };
 		8BD466602CFAAB470023ED9D /* VolunteerListCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = VolunteerListCollectionViewCell.xib; sourceTree = "<group>"; };
@@ -77,18 +87,29 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				458AE67685BBB23A5A26921A /* Pods_Pawsitive.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		224192DE7E4089475EFC1D04 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				39F3912534A41FFADE65281C /* Pods_Pawsitive.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		8B5059622CF95261009202E6 /* Login */ = {
 			isa = PBXGroup;
 			children = (
 				8B5059632CF9528F009202E6 /* LoginViewController.swift */,
 				8B5059652CF96A65009202E6 /* SignupViewController.swift */,
 				8B5059672CF96E4C009202E6 /* SignupCompleteViewController.swift */,
+				8BA4A0D82CFAE1F400352665 /* SignupDataModel.swift */,
+				8BA4A0DA2CFAE9DC00352665 /* LoginDataModel.swift */,
 			);
 			path = Login;
 			sourceTree = "<group>";
@@ -108,6 +129,8 @@
 			children = (
 				8BA434432CF94AA70048B4EA /* Pawsitive */,
 				8BA434232CF949750048B4EA /* Products */,
+				91143230B15C51F682316274 /* Pods */,
+				224192DE7E4089475EFC1D04 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -134,6 +157,7 @@
 				8BA434402CF94AA70048B4EA /* Main.storyboard */,
 				8BA434412CF94AA70048B4EA /* SceneDelegate.swift */,
 				8B50596C2CF97522009202E6 /* CustomTabBarViewController.swift */,
+				8BA4A0D62CFAD6A800352665 /* API+Extension.swift */,
 			);
 			path = Pawsitive;
 			sourceTree = "<group>";
@@ -176,6 +200,15 @@
 			path = Adopt;
 			sourceTree = "<group>";
 		};
+		91143230B15C51F682316274 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				3BD287AB63CED8A3946DFB30 /* Pods-Pawsitive.debug.xcconfig */,
+				42DB14F3EB5535AA15B42868 /* Pods-Pawsitive.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -183,17 +216,17 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 8BA434352CF949760048B4EA /* Build configuration list for PBXNativeTarget "Pawsitive" */;
 			buildPhases = (
+				06C7B445057141F61967681E /* [CP] Check Pods Manifest.lock */,
 				8BA4341E2CF949750048B4EA /* Sources */,
 				8BA4341F2CF949750048B4EA /* Frameworks */,
 				8BA434202CF949750048B4EA /* Resources */,
+				E2834B352D4FBB5C48CAA4D7 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
 			name = Pawsitive;
-			packageProductDependencies = (
-			);
 			productName = Pawsitive;
 			productReference = 8BA434222CF949750048B4EA /* Pawsitive.app */;
 			productType = "com.apple.product-type.application";
@@ -214,6 +247,7 @@
 				};
 			};
 			buildConfigurationList = 8BA4341D2CF949750048B4EA /* Build configuration list for PBXProject "Pawsitive" */;
+			compatibilityVersion = "Xcode 14.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
@@ -221,8 +255,6 @@
 				Base,
 			);
 			mainGroup = 8BA434192CF949750048B4EA;
-			minimizedProjectReferenceProxies = 1;
-			preferredProjectObjectVersion = 77;
 			productRefGroup = 8BA434232CF949750048B4EA /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -257,21 +289,66 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		06C7B445057141F61967681E /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Pawsitive-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E2834B352D4FBB5C48CAA4D7 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Pawsitive/Pods-Pawsitive-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Pawsitive/Pods-Pawsitive-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Pawsitive/Pods-Pawsitive-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		8BA4341E2CF949750048B4EA /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				8BA4A0D32CFAC51200352665 /* AdoptDetailViewController.swift in Sources */,
+				8BA4A0D92CFAE1F400352665 /* SignupDataModel.swift in Sources */,
 				8BD4666B2CFABB580023ED9D /* AdoptListCollectionViewCell.swift in Sources */,
 				8B5059642CF9528F009202E6 /* LoginViewController.swift in Sources */,
 				8BD466622CFAAB470023ED9D /* VolunteerListCollectionViewCell.swift in Sources */,
+				8BA4A0D72CFAD6A800352665 /* API+Extension.swift in Sources */,
 				8BD4665E2CFAAA330023ED9D /* VolunteerViewController.swift in Sources */,
 				8BA434482CF94AA70048B4EA /* AppDelegate.swift in Sources */,
 				8B50596D2CF97522009202E6 /* CustomTabBarViewController.swift in Sources */,
 				8BD466642CFAB2A70023ED9D /* VolunteerDetailViewController.swift in Sources */,
 				8B5059662CF96A65009202E6 /* SignupViewController.swift in Sources */,
 				8BD466672CFAB9C40023ED9D /* AdoptViewController.swift in Sources */,
+				8BA4A0DB2CFAE9DC00352665 /* LoginDataModel.swift in Sources */,
 				8B5059682CF96E4C009202E6 /* SignupCompleteViewController.swift in Sources */,
 				8B5059712CF97763009202E6 /* HomeViewController.swift in Sources */,
 				8BA434492CF94AA70048B4EA /* SceneDelegate.swift in Sources */,
@@ -303,12 +380,14 @@
 /* Begin XCBuildConfiguration section */
 		8BA434362CF949760048B4EA /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3BD287AB63CED8A3946DFB30 /* Pods-Pawsitive.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = B7X35RUY6S;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Pawsitive/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -331,12 +410,14 @@
 		};
 		8BA434372CF949760048B4EA /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 42DB14F3EB5535AA15B42868 /* Pods-Pawsitive.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = B7X35RUY6S;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Pawsitive/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;

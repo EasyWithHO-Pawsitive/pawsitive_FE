@@ -82,4 +82,31 @@ class VolunteerDetailViewController: UIViewController {
         
         applyBtn.layer.cornerRadius = 27.5
     }
+    
+    // action
+    @IBAction func backBtn(_ sender: Any) {
+        guard let volunteerVC = storyboard?.instantiateViewController(withIdentifier: "VolunteerViewController") as? VolunteerViewController else {
+            return
+        }
+        volunteerVC.modalPresentationStyle = .fullScreen
+        present(volunteerVC, animated: true)
+    }
+    
+    @IBAction func tapApply(_ sender: Any) {
+        let alert = UIAlertController(title: "해당 봉사를 신청하시겠습니까?", message: "상세 내용을 한 번 더 확인해주세요.", preferredStyle: .alert)
+        
+        let cancelAction = UIAlertAction(title: "취소", style: .default, handler: nil)
+        alert.addAction(cancelAction)
+        cancelAction.setValue(UIColor.cancelAlert, forKey: "titleTextColor")
+        
+        let confirmAction = UIAlertAction(title: "확인", style: .default)
+        alert.addAction(confirmAction)
+        confirmAction.setValue(UIColor.buttonSelected, forKey: "titleTextColor")
+        
+        alert.preferredAction = confirmAction
+        
+        present(alert, animated: true, completion: nil)
+    }
+    
+    
 }

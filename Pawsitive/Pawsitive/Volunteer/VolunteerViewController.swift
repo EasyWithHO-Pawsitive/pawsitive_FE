@@ -56,13 +56,9 @@ extension VolunteerViewController: UICollectionViewDataSource {
         
         // 셀 데이터 설정
         cell.volunteerName.text = "Volunteer \(indexPath.row + 1)"
-        cell.volunteerDate.text = "2024-11-29"
         cell.dateLabel.text = "Date"
-        cell.volunteerNumber.text = "10"
         cell.numberLabel.text = "Participants"
-        cell.volunteerCop.text = "Animal Care"
         cell.copLabel.text = "Task"
-        cell.volunteerLocation.text = "Seoul"
         cell.locationLabel.text = "Location"
         
         return cell

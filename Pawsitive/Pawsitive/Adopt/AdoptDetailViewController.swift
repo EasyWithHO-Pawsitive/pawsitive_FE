@@ -69,5 +69,14 @@ class AdoptDetailViewController: UIViewController {
         speciesBtn.layer.borderWidth = 1
         speciesBtn.layer.borderColor = UIColor.cityLabel.cgColor
     }
-
+    
+    // action
+    @IBAction func backBtn(_ sender: Any) {
+        guard let adoptVC = storyboard?.instantiateViewController(withIdentifier: "AdoptViewController") as? AdoptViewController else {
+            return
+        }
+        adoptVC.modalPresentationStyle = .fullScreen
+        present(adoptVC, animated: true)
+    }
+    
 }

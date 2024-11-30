@@ -39,4 +39,14 @@ class SignupCompleteViewController: UIViewController {
         
         loginBtn.layer.cornerRadius = 27.5
     }
+    
+    // action
+    @IBAction func tapLogin(_ sender: Any) {
+        guard let logInVC = storyboard?.instantiateViewController(withIdentifier: "LoginViewController") as? LoginViewController else {
+            return
+        }
+        logInVC.modalPresentationStyle = .fullScreen
+        present(logInVC, animated: true)
+    }
+    
 }

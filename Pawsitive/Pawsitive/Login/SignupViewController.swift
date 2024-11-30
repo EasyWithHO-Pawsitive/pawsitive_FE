@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Alamofire
 
 class SignupViewController: UIViewController {
 
@@ -28,6 +29,9 @@ class SignupViewController: UIViewController {
         
         setupFont()
         setupUI()
+        
+        setupTextFieldObservers()
+        updateSignupButtonState()
     }
     
     private func setupFont() {
@@ -66,6 +70,7 @@ class SignupViewController: UIViewController {
                 NSAttributedString.Key.font: UIFont(name: "Pretendard-Regular", size: 15)!
             ]
         )
+        passwordTextField.isSecureTextEntry = true
         
         nameTextField.borderStyle = .none // 기본 설정 제거
         nameTextField.layer.cornerRadius = 10
@@ -113,5 +118,84 @@ class SignupViewController: UIViewController {
         )
         
         signupCompleteBtn.layer.cornerRadius = 27.5
+        signupCompleteBtn.backgroundColor = UIColor.buttonUnselected // 초기 비활성화 상태 색상
+        signupCompleteBtn.isEnabled = false // 초기 비활성화 상태
+    }
+    
+    private func setupTextFieldObservers() {
+        let textFields = [idTextField, passwordTextField, nameTextField, birthTextField, phoneNumberTextField]
+        
+        textFields.forEach { textField in
+            textField?.addTarget(self, action: #selector(textFieldsDidChange), for: .editingChanged)
+        }
+    }
+    
+    @objc private func textFieldsDidChange() {
+        updateSignupButtonState()
+    }
+    
+    private func updateSignupButtonState() {
+        let textFields = [idTextField, passwordTextField, nameTextField, birthTextField, phoneNumberTextField]
+        
+        let areAllFieldsFilled = textFields.allSatisfy { textField in
+            !(textField?.text?.isEmpty ?? true)
+        }
+        
+        if areAllFieldsFilled {
+            signupCompleteBtn.isEnabled = true
+            signupCompleteBtn.backgroundColor = UIColor.buttonSelected // 활성화 색상
+        } else {
+            signupCompleteBtn.isEnabled = false
+            signupCompleteBtn.backgroundColor = UIColor.buttonUnselected // 비활성화 색상
+        }
+    }
+    
+    // action
+    @IBAction func tapSignup(_ sender: Any) {
+        guard let id = idTextField.text,
+              let password = passwordTextField.text,
+              let name = nameTextField.text,
+              let birth = birthTextField.text,
+              let phone = phoneNumberTextField.text else { return }
+        
+        // Request Body 생성
+        let requestBody = [
+            "id": id,
+            "password": password,
+            "name": name,
+            "birth": birth,
+            "phone": phone
+        ]
+        
+        // API 호출
+        APIClient.postRequest(endpoint: "/user/signup", parameters: requestBody) { (result: Result<SignupResponseBody, AFError>) in
+            switch result {
+            case .success(let response):
+                if response.isSuccess {
+                    DispatchQueue.main.async {
+                        self.moveToSignupComplete()
+                    }
+                } else {
+                    DispatchQueue.main.async {
+                        self.debugFailure(message: response.message)
+                    }
+                }
+            case .failure(let error):
+                DispatchQueue.main.async {
+                    self.debugFailure(message: error.localizedDescription)
+                }
+            }
+        }
+    }
+    
+    private func moveToSignupComplete() {
+        guard let signupCompleteVC = self.storyboard?.instantiateViewController(withIdentifier: "SignupCompleteViewController") as? SignupCompleteViewController else { return }
+        signupCompleteVC.modalPresentationStyle = .fullScreen
+        self.present(signupCompleteVC, animated: true)
+    }
+    
+    private func debugFailure(message: String) {
+        // 실패 디버깅 정보를 출력
+        print("회원가입 실패: \(message)")
     }
 }
