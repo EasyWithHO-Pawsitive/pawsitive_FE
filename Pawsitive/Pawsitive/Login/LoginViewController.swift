@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Alamofire
 
 class LoginViewController: UIViewController {
     // label
@@ -103,11 +104,28 @@ class LoginViewController: UIViewController {
 
     // aciton
     @IBAction func tapLogin(_ sender: Any) {
-        guard let customTabBarVC = storyboard?.instantiateViewController(withIdentifier: "CustomTabBarViewController") as? CustomTabBarViewController else {
-            return
+        guard let id = idTextField.text, let password = passwordTextField.text else { return }
+                
+        let requestBody = LoginRequestBody(id: id, password: password)
+        
+        APIClient.postRequest(endpoint: "/user/login", parameters: requestBody) { (result: Result<LoginResponseBody, AFError>) in
+            switch result {
+            case .success(let response):
+                if response.isSuccess {
+                    DispatchQueue.main.async {
+                        self.moveToMainScreen()
+                    }
+                } else {
+                    DispatchQueue.main.async {
+                        print("로그인 실패: \(response.message)")
+                    }
+                }
+            case .failure(let error):
+                DispatchQueue.main.async {
+                    self.debugFailure(error: error)
+                }
+            }
         }
-        customTabBarVC.modalPresentationStyle = .fullScreen
-        present(customTabBarVC, animated: true)
     }
     
     @IBAction func tapSignup(_ sender: Any) {
@@ -116,5 +134,25 @@ class LoginViewController: UIViewController {
         }
         signupVC.modalPresentationStyle = .fullScreen
         present(signupVC, animated: true)
+    }
+    
+    private func moveToMainScreen() {
+        guard let customTabBarVC = storyboard?.instantiateViewController(withIdentifier: "CustomTabBarViewController") as? CustomTabBarViewController else {
+            return
+        }
+        customTabBarVC.modalPresentationStyle = .fullScreen
+        present(customTabBarVC, animated: true)
+    }
+    
+    private func debugFailure(error: AFError) {
+        let message: String
+        if let underlyingError = error.underlyingError {
+            message = "Underlying Error: \(underlyingError.localizedDescription)"
+        } else if let responseCode = error.responseCode {
+            message = "HTTP Response Code: \(responseCode)"
+        } else {
+            message = "Error: \(error.localizedDescription)"
+        }
+        print("API Debug Info: \(message)")
     }
 }
