@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="23094" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="23084"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="volunteerCell" id="gTV-IL-0wX" customClass="VolunteerListCollectionViewCell" customModule="Pawsitive" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="353" height="124"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="353" height="124"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="유기견을 위한 강아지 간식 만들기" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DMt-r4-uaj">
+                        <rect key="frame" x="29" y="15" width="197" height="18"/>
+                        <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                        <color key="textColor" name="button_selected"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="봉사 날짜" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ffx-ka-hio">
+                        <rect key="frame" x="29" y="43" width="45" height="15"/>
+                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="12"/>
+                        <color key="textColor" name="logo_introduce"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="모집 인원" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QHu-vc-qBh">
+                        <rect key="frame" x="201" y="43" width="45" height="15"/>
+                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="12"/>
+                        <color key="textColor" name="logo_introduce"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="모집 기관" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yBG-c5-1Cy">
+                        <rect key="frame" x="29" y="81" width="45" height="15"/>
+                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="12"/>
+                        <color key="textColor" name="logo_introduce"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="위치" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3O2-a1-hf2">
+                        <rect key="frame" x="201" y="81" width="21" height="15"/>
+                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="12"/>
+                        <color key="textColor" name="logo_introduce"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2024.12.05" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hpL-S4-hkT">
+                        <rect key="frame" x="88" y="43" width="67" height="15"/>
+                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="12"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="호은이의 이지" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gQ1-v2-nMn">
+                        <rect key="frame" x="88" y="81" width="66" height="15"/>
+                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="12"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="10명" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tqV-kq-3bM">
+                        <rect key="frame" x="260" y="43" width="25" height="15"/>
+                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="12"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="서울" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AoU-Db-RBm">
+                        <rect key="frame" x="260" y="81" width="21" height="15"/>
+                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="12"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+            </view>
+            <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
+            <color key="backgroundColor" name="cell_background"/>
+            <constraints>
+                <constraint firstItem="yBG-c5-1Cy" firstAttribute="leading" secondItem="ffx-ka-hio" secondAttribute="leading" id="1mz-n0-dSn"/>
+                <constraint firstItem="QHu-vc-qBh" firstAttribute="leading" secondItem="ffx-ka-hio" secondAttribute="trailing" constant="127" id="4t2-LZ-kPW"/>
+                <constraint firstItem="ffx-ka-hio" firstAttribute="leading" secondItem="DMt-r4-uaj" secondAttribute="leading" id="7G8-HE-whC"/>
+                <constraint firstItem="gQ1-v2-nMn" firstAttribute="leading" secondItem="yBG-c5-1Cy" secondAttribute="trailing" constant="14" id="9ey-zS-vUz"/>
+                <constraint firstItem="QHu-vc-qBh" firstAttribute="centerY" secondItem="ffx-ka-hio" secondAttribute="centerY" id="ATw-ks-aro"/>
+                <constraint firstItem="ffx-ka-hio" firstAttribute="top" secondItem="DMt-r4-uaj" secondAttribute="bottom" constant="10" id="DwD-Cl-UsJ"/>
+                <constraint firstItem="3O2-a1-hf2" firstAttribute="leading" secondItem="yBG-c5-1Cy" secondAttribute="trailing" constant="127" id="EFa-1Y-RJD"/>
+                <constraint firstItem="DMt-r4-uaj" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="15" id="FJl-b2-14p"/>
+                <constraint firstItem="tqV-kq-3bM" firstAttribute="centerY" secondItem="QHu-vc-qBh" secondAttribute="centerY" id="GgK-YN-e34"/>
+                <constraint firstItem="hpL-S4-hkT" firstAttribute="centerY" secondItem="ffx-ka-hio" secondAttribute="centerY" id="HFa-Hm-FU5"/>
+                <constraint firstItem="DMt-r4-uaj" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="29" id="N9W-iZ-EvE"/>
+                <constraint firstItem="hpL-S4-hkT" firstAttribute="leading" secondItem="ffx-ka-hio" secondAttribute="trailing" constant="14" id="NJi-6j-Ygm"/>
+                <constraint firstItem="AoU-Db-RBm" firstAttribute="centerY" secondItem="3O2-a1-hf2" secondAttribute="centerY" id="Uhf-X8-ALb"/>
+                <constraint firstItem="3O2-a1-hf2" firstAttribute="centerY" secondItem="yBG-c5-1Cy" secondAttribute="centerY" id="WqF-xC-5FN"/>
+                <constraint firstItem="tqV-kq-3bM" firstAttribute="leading" secondItem="QHu-vc-qBh" secondAttribute="trailing" constant="14" id="YdL-gq-j7t"/>
+                <constraint firstItem="yBG-c5-1Cy" firstAttribute="top" secondItem="ffx-ka-hio" secondAttribute="bottom" constant="23" id="fxn-B1-8r0"/>
+                <constraint firstItem="AoU-Db-RBm" firstAttribute="leading" secondItem="3O2-a1-hf2" secondAttribute="trailing" constant="38" id="gYa-Sz-jLX"/>
+                <constraint firstItem="gQ1-v2-nMn" firstAttribute="centerY" secondItem="yBG-c5-1Cy" secondAttribute="centerY" id="uj6-4V-ow9"/>
+            </constraints>
+            <connections>
+                <outlet property="copLabel" destination="gQ1-v2-nMn" id="8X8-Kr-khp"/>
+                <outlet property="dateLabel" destination="hpL-S4-hkT" id="FJo-2O-rGx"/>
+                <outlet property="locationLabel" destination="AoU-Db-RBm" id="3Zb-Ak-EmS"/>
+                <outlet property="numberLabel" destination="tqV-kq-3bM" id="khm-SI-qjF"/>
+                <outlet property="volunteerCop" destination="yBG-c5-1Cy" id="fwv-0B-MmG"/>
+                <outlet property="volunteerDate" destination="ffx-ka-hio" id="uZd-8l-zvX"/>
+                <outlet property="volunteerLocation" destination="3O2-a1-hf2" id="uU7-fy-9b9"/>
+                <outlet property="volunteerName" destination="DMt-r4-uaj" id="x2i-y3-Ie4"/>
+                <outlet property="volunteerNumber" destination="QHu-vc-qBh" id="zha-NW-0uS"/>
+            </connections>
+            <point key="canvasLocation" x="138.1679389312977" y="19.718309859154932"/>
+        </collectionViewCell>
+    </objects>
+    <resources>
+        <namedColor name="button_selected">
+            <color red="0.70196078431372544" green="0.61176470588235299" blue="0.54509803921568623" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="cell_background">
+            <color red="1" green="0.98039215686274506" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="logo_introduce">
+            <color red="0.0" green="0.0" blue="0.0" alpha="0.40000000596046448" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
+</document>
