@@ -25,6 +25,9 @@ class LoginViewController: UIViewController {
         setupFont()
         setupUI()
         addUnderlineSignupBtn()
+        
+        setupTextFieldObservers()
+        updateLoginButtonState()
     }
     
     private func setupFont() {
@@ -63,8 +66,11 @@ class LoginViewController: UIViewController {
                 NSAttributedString.Key.font: UIFont(name: "Pretendard-Regular", size: 15)!
             ]
         )
+        passwordTextField.isSecureTextEntry = true
         
         loginBtn.layer.cornerRadius = 27.5
+        loginBtn.backgroundColor = UIColor.buttonUnselected // 초기 비활성화 상태 색상
+        loginBtn.isEnabled = false // 초기 비활성화 상태
     }
     
     private func addUnderlineSignupBtn() {
@@ -72,5 +78,43 @@ class LoginViewController: UIViewController {
         let attributedTitle = NSAttributedString(string: title, attributes: [ .underlineStyle: NSUnderlineStyle.single.rawValue,])
         signupBtn.setAttributedTitle(attributedTitle, for: .normal)
     }
+    
+    private func setupTextFieldObservers() {
+        idTextField.addTarget(self, action: #selector(textFieldsDidChange), for: .editingChanged)
+        passwordTextField.addTarget(self, action: #selector(textFieldsDidChange), for: .editingChanged)
+    }
+    
+    @objc private func textFieldsDidChange() {
+        updateLoginButtonState()
+    }
+    
+    private func updateLoginButtonState() {
+        let isIdEntered = !(idTextField.text?.isEmpty ?? true)
+        let isPasswordEntered = !(passwordTextField.text?.isEmpty ?? true)
+        
+        if isIdEntered && isPasswordEntered {
+            loginBtn.isEnabled = true
+            loginBtn.backgroundColor = UIColor.buttonSelected // 활성화 색상
+        } else {
+            loginBtn.isEnabled = false
+            loginBtn.backgroundColor = UIColor.buttonUnselected // 비활성화 색상
+        }
+    }
 
+    // aciton
+    @IBAction func tapLogin(_ sender: Any) {
+        guard let customTabBarVC = storyboard?.instantiateViewController(withIdentifier: "CustomTabBarViewController") as? CustomTabBarViewController else {
+            return
+        }
+        customTabBarVC.modalPresentationStyle = .fullScreen
+        present(customTabBarVC, animated: true)
+    }
+    
+    @IBAction func tapSignup(_ sender: Any) {
+        guard let signupVC = storyboard?.instantiateViewController(withIdentifier: "SignupViewController") as? SignupViewController else {
+            return
+        }
+        signupVC.modalPresentationStyle = .fullScreen
+        present(signupVC, animated: true)
+    }
 }

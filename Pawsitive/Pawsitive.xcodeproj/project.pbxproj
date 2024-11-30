@@ -30,6 +30,7 @@
 		8BA4345C2CF94AE90048B4EA /* Pretendard-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 8BA4344D2CF94AE90048B4EA /* Pretendard-Bold.otf */; };
 		8BA4345D2CF94AE90048B4EA /* Pretendard-Thin.otf in Resources */ = {isa = PBXBuildFile; fileRef = 8BA434542CF94AE90048B4EA /* Pretendard-Thin.otf */; };
 		8BA4A0D32CFAC51200352665 /* AdoptDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BA4A0D22CFAC51200352665 /* AdoptDetailViewController.swift */; };
+		8BA4A0D72CFAD6A800352665 /* API+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BA4A0D62CFAD6A800352665 /* API+Extension.swift */; };
 		8BD4665E2CFAAA330023ED9D /* VolunteerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BD4665D2CFAAA330023ED9D /* VolunteerViewController.swift */; };
 		8BD466612CFAAB470023ED9D /* VolunteerListCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8BD466602CFAAB470023ED9D /* VolunteerListCollectionViewCell.xib */; };
 		8BD466622CFAAB470023ED9D /* VolunteerListCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BD4665F2CFAAB470023ED9D /* VolunteerListCollectionViewCell.swift */; };
@@ -67,6 +68,7 @@
 		8BA434532CF94AE90048B4EA /* Pretendard-SemiBold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-SemiBold.otf"; sourceTree = "<group>"; };
 		8BA434542CF94AE90048B4EA /* Pretendard-Thin.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-Thin.otf"; sourceTree = "<group>"; };
 		8BA4A0D22CFAC51200352665 /* AdoptDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdoptDetailViewController.swift; sourceTree = "<group>"; };
+		8BA4A0D62CFAD6A800352665 /* API+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "API+Extension.swift"; sourceTree = "<group>"; };
 		8BD4665D2CFAAA330023ED9D /* VolunteerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VolunteerViewController.swift; sourceTree = "<group>"; };
 		8BD4665F2CFAAB470023ED9D /* VolunteerListCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VolunteerListCollectionViewCell.swift; sourceTree = "<group>"; };
 		8BD466602CFAAB470023ED9D /* VolunteerListCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = VolunteerListCollectionViewCell.xib; sourceTree = "<group>"; };
@@ -149,6 +151,7 @@
 				8BA434402CF94AA70048B4EA /* Main.storyboard */,
 				8BA434412CF94AA70048B4EA /* SceneDelegate.swift */,
 				8B50596C2CF97522009202E6 /* CustomTabBarViewController.swift */,
+				8BA4A0D62CFAD6A800352665 /* API+Extension.swift */,
 			);
 			path = Pawsitive;
 			sourceTree = "<group>";
@@ -197,7 +200,6 @@
 				3BD287AB63CED8A3946DFB30 /* Pods-Pawsitive.debug.xcconfig */,
 				42DB14F3EB5535AA15B42868 /* Pods-Pawsitive.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -239,6 +241,7 @@
 				};
 			};
 			buildConfigurationList = 8BA4341D2CF949750048B4EA /* Build configuration list for PBXProject "Pawsitive" */;
+			compatibilityVersion = "Xcode 14.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
@@ -331,6 +334,7 @@
 				8BD4666B2CFABB580023ED9D /* AdoptListCollectionViewCell.swift in Sources */,
 				8B5059642CF9528F009202E6 /* LoginViewController.swift in Sources */,
 				8BD466622CFAAB470023ED9D /* VolunteerListCollectionViewCell.swift in Sources */,
+				8BA4A0D72CFAD6A800352665 /* API+Extension.swift in Sources */,
 				8BD4665E2CFAAA330023ED9D /* VolunteerViewController.swift in Sources */,
 				8BA434482CF94AA70048B4EA /* AppDelegate.swift in Sources */,
 				8B50596D2CF97522009202E6 /* CustomTabBarViewController.swift in Sources */,
@@ -375,6 +379,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = B7X35RUY6S;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Pawsitive/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -404,6 +409,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = B7X35RUY6S;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Pawsitive/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;

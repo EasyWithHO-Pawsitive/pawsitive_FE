@@ -28,6 +28,9 @@ class SignupViewController: UIViewController {
         
         setupFont()
         setupUI()
+        
+        setupTextFieldObservers()
+        updateSignupButtonState()
     }
     
     private func setupFont() {
@@ -66,6 +69,7 @@ class SignupViewController: UIViewController {
                 NSAttributedString.Key.font: UIFont(name: "Pretendard-Regular", size: 15)!
             ]
         )
+        passwordTextField.isSecureTextEntry = true
         
         nameTextField.borderStyle = .none // 기본 설정 제거
         nameTextField.layer.cornerRadius = 10
@@ -113,5 +117,45 @@ class SignupViewController: UIViewController {
         )
         
         signupCompleteBtn.layer.cornerRadius = 27.5
+        signupCompleteBtn.backgroundColor = UIColor.buttonUnselected // 초기 비활성화 상태 색상
+        signupCompleteBtn.isEnabled = false // 초기 비활성화 상태
     }
+    
+    private func setupTextFieldObservers() {
+        let textFields = [idTextField, passwordTextField, nameTextField, birthTextField, phoneNumberTextField]
+        
+        textFields.forEach { textField in
+            textField?.addTarget(self, action: #selector(textFieldsDidChange), for: .editingChanged)
+        }
+    }
+    
+    @objc private func textFieldsDidChange() {
+        updateSignupButtonState()
+    }
+    
+    private func updateSignupButtonState() {
+        let textFields = [idTextField, passwordTextField, nameTextField, birthTextField, phoneNumberTextField]
+        
+        let areAllFieldsFilled = textFields.allSatisfy { textField in
+            !(textField?.text?.isEmpty ?? true)
+        }
+        
+        if areAllFieldsFilled {
+            signupCompleteBtn.isEnabled = true
+            signupCompleteBtn.backgroundColor = UIColor.buttonSelected // 활성화 색상
+        } else {
+            signupCompleteBtn.isEnabled = false
+            signupCompleteBtn.backgroundColor = UIColor.buttonUnselected // 비활성화 색상
+        }
+    }
+    
+    // action
+    @IBAction func tapSignup(_ sender: Any) {
+        guard let signupCompleteVC = storyboard?.instantiateViewController(withIdentifier: "SignupCompleteViewController") as? SignupCompleteViewController else {
+            return
+        }
+        signupCompleteVC.modalPresentationStyle = .fullScreen
+        present(signupCompleteVC, animated: true)
+    }
+    
 }
