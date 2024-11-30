@@ -46,6 +46,7 @@
 		8BE954962CFB101C00EB59E6 /* VolunteerApplyDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BE954952CFB101B00EB59E6 /* VolunteerApplyDataModel.swift */; };
 		8BE954982CFB142600EB59E6 /* AdoptDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BE954972CFB142600EB59E6 /* AdoptDataModel.swift */; };
 		8BE9549A2CFB170500EB59E6 /* AdoptDetailDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BE954992CFB170500EB59E6 /* AdoptDetailDataModel.swift */; };
+		8BE9549D2CFB333700EB59E6 /* WriteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BE9549C2CFB333700EB59E6 /* WriteViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -92,6 +93,7 @@
 		8BE954952CFB101B00EB59E6 /* VolunteerApplyDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VolunteerApplyDataModel.swift; sourceTree = "<group>"; };
 		8BE954972CFB142600EB59E6 /* AdoptDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdoptDataModel.swift; sourceTree = "<group>"; };
 		8BE954992CFB170500EB59E6 /* AdoptDetailDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdoptDetailDataModel.swift; sourceTree = "<group>"; };
+		8BE9549C2CFB333700EB59E6 /* WriteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WriteViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -158,6 +160,7 @@
 		8BA434432CF94AA70048B4EA /* Pawsitive */ = {
 			isa = PBXGroup;
 			children = (
+				8BE9549B2CFB332800EB59E6 /* Write */,
 				8BD466652CFAB9B90023ED9D /* Adopt */,
 				8BD4665C2CFAAA1E0023ED9D /* Volunteer */,
 				8B50596F2CF9775B009202E6 /* Home */,
@@ -216,6 +219,14 @@
 				8BE954992CFB170500EB59E6 /* AdoptDetailDataModel.swift */,
 			);
 			path = Adopt;
+			sourceTree = "<group>";
+		};
+		8BE9549B2CFB332800EB59E6 /* Write */ = {
+			isa = PBXGroup;
+			children = (
+				8BE9549C2CFB333700EB59E6 /* WriteViewController.swift */,
+			);
+			path = Write;
 			sourceTree = "<group>";
 		};
 		91143230B15C51F682316274 /* Pods */ = {
@@ -360,6 +371,7 @@
 				8BD4666B2CFABB580023ED9D /* AdoptListCollectionViewCell.swift in Sources */,
 				8B5059642CF9528F009202E6 /* LoginViewController.swift in Sources */,
 				8BD466622CFAAB470023ED9D /* VolunteerListCollectionViewCell.swift in Sources */,
+				8BE9549D2CFB333700EB59E6 /* WriteViewController.swift in Sources */,
 				8BE954962CFB101C00EB59E6 /* VolunteerApplyDataModel.swift in Sources */,
 				8BA4A0D72CFAD6A800352665 /* API+Extension.swift in Sources */,
 				8BD4665E2CFAAA330023ED9D /* VolunteerViewController.swift in Sources */,
