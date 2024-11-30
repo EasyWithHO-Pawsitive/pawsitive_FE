@@ -25,6 +25,7 @@ class VolunteerListCollectionViewCell: UICollectionViewCell {
         super.awakeFromNib()
         
         setupFont()
+        setupUI()
     }
 
     private func setupFont() {
@@ -37,5 +38,26 @@ class VolunteerListCollectionViewCell: UICollectionViewCell {
         copLabel.font = UIFont(name: "Pretendard-SemiBold", size: 12)
         volunteerLocation.font = UIFont(name: "Pretendard-SemiBold", size: 12)
         locationLabel.font = UIFont(name: "Pretendard-SemiBold", size: 12)
+    }
+    
+    private func setupUI() {
+        // volunteerName 설정
+        volunteerName.lineBreakMode = .byTruncatingTail // ... 처리
+        volunteerName.translatesAutoresizingMaskIntoConstraints = false
+        
+        // copLabel 설정
+        copLabel.lineBreakMode = .byTruncatingTail // ... 처리
+        copLabel.translatesAutoresizingMaskIntoConstraints = false
+        
+        if let contentView = copLabel.superview {
+            NSLayoutConstraint.activate([
+                // volunteerName 설정
+                volunteerName.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -20),
+                
+                // copLabel 설정
+                copLabel.trailingAnchor.constraint(equalTo: volunteerLocation.leadingAnchor, constant: -10),
+                copLabel.leadingAnchor.constraint(greaterThanOrEqualTo: contentView.leadingAnchor, constant: 20)
+            ])
+        }
     }
 }

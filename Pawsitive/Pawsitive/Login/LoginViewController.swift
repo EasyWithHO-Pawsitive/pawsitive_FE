@@ -105,14 +105,17 @@ class LoginViewController: UIViewController {
     // aciton
     @IBAction func tapLogin(_ sender: Any) {
         guard let id = idTextField.text, let password = passwordTextField.text else { return }
-                
+            
         let requestBody = LoginRequestBody(id: id, password: password)
         
         APIClient.postRequest(endpoint: "/user/login", parameters: requestBody) { (result: Result<LoginResponseBody, AFError>) in
             switch result {
             case .success(let response):
-                if response.isSuccess {
+                if response.isSuccess, let userId = response.result?.id {
                     DispatchQueue.main.async {
+                        // 로그인 성공 시 UserDefaults에 저장
+                        UserDefaults.standard.set(userId, forKey: "loggedInUserId")
+                        UserDefaults.standard.synchronize() // 즉시 저장
                         self.moveToMainScreen()
                     }
                 } else {
