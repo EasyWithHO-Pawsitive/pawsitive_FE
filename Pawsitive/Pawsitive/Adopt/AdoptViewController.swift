@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Alamofire
 
 class AdoptViewController: UIViewController {
     
@@ -18,6 +19,8 @@ class AdoptViewController: UIViewController {
     @IBOutlet weak var adoptListCollectionView: UICollectionView!
     
     let adoptListLayout = UICollectionViewFlowLayout()
+    var adoptions: [AdoptionItem] = [] // API 데이터 저장
+    let adoptImages = ["adopt1", "adopt2", "adopt3", "adopt4", "adopt5"]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -35,6 +38,8 @@ class AdoptViewController: UIViewController {
         // DataSource와 Delegate 연결
         adoptListCollectionView.dataSource = self
         adoptListCollectionView.delegate = self
+        
+        fetchAdoptions()
     }
     
     private func setupFont() {
@@ -42,12 +47,30 @@ class AdoptViewController: UIViewController {
         adoptTitleLabel.font = UIFont(name: "Pretendard-Bold", size: 20)
         adoptSubLabel.font = UIFont(name: "Pretendard-Medium", size: 15)
     }
+    
+    private func fetchAdoptions() {
+        APIClient.getRequest(endpoint: "/adoption", parameters: nil) { (result: Result<AdoptionResponse, AFError>) in
+            switch result {
+            case .success(let response):
+                if response.isSuccess {
+                    DispatchQueue.main.async {
+                        self.adoptions = response.result.adoptions
+                        self.adoptListCollectionView.reloadData()
+                    }
+                } else {
+                    print("API 호출 실패: \(response.message)")
+                }
+            case .failure(let error):
+                print("네트워크 오류: \(error.localizedDescription)")
+            }
+        }
+    }
 }
 
 // MARK: - UICollectionViewDataSource
 extension AdoptViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 4 // 데이터 개수
+        return adoptions.count // 데이터 개수
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -55,11 +78,19 @@ extension AdoptViewController: UICollectionViewDataSource {
             return UICollectionViewCell()
         }
         
-        // 셀 데이터 설정
-        cell.titleLabel.text = "Adopt \(indexPath.row + 1)"
-        cell.speciesDetailLabel.text = "Dog"
-        cell.shelterDetailLabel.text = "Seoul Shelter"
-        cell.dateDetailLabel.text = "2024-11-29"
+        // 데이터 매핑
+        let adoption = adoptions[indexPath.row]
+        cell.titleLabel.text = adoption.title
+        cell.speciesDetailLabel.text = adoption.specType
+        cell.shelterDetailLabel.text = adoption.shelterName
+        cell.dateDetailLabel.text = adoption.createdAt
+        
+        // adoptImg에 이미지 설정
+        if indexPath.row < adoptImages.count {
+            cell.adoptImg.image = UIImage(named: adoptImages[indexPath.row])
+        } else {
+            cell.adoptImg.image = UIImage(named: "default_placeholder") // 기본 이미지
+        }
         
         return cell
     }
@@ -74,19 +105,18 @@ extension AdoptViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
         return 10 // 행 간 간격
     }
-    
-//    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
-//        return 0 // 열 간 간격 (수직 방향이므로 0)
-//    }
-    
-//    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
-//        return UIEdgeInsets(top: 16, left: 16, bottom: 16, right: 16) // 섹션 여백
-//    }
 }
 
 // MARK: - UICollectionViewDelegate
 extension AdoptViewController: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        print("Selected Adopt \(indexPath.row + 1)")
+        guard let detailVC = storyboard?.instantiateViewController(withIdentifier: "AdoptDetailViewController") as? AdoptDetailViewController else {
+            return
+        }
+        
+        // 선택한 입양 ID를 전달
+        detailVC.postId = adoptions[indexPath.row].id
+        detailVC.modalPresentationStyle = .fullScreen
+        present(detailVC, animated: true)
     }
 }

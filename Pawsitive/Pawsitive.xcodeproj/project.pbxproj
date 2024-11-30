@@ -41,6 +41,11 @@
 		8BD4666A2CFABB580023ED9D /* AdoptListCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8BD466692CFABB580023ED9D /* AdoptListCollectionViewCell.xib */; };
 		8BD4666B2CFABB580023ED9D /* AdoptListCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BD466682CFABB580023ED9D /* AdoptListCollectionViewCell.swift */; };
 		8BE9548E2CFAFC1F00EB59E6 /* HomeDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BE9548D2CFAFC1F00EB59E6 /* HomeDataModel.swift */; };
+		8BE954922CFB04DA00EB59E6 /* VolunteerListDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BE954912CFB04DA00EB59E6 /* VolunteerListDataModel.swift */; };
+		8BE954942CFB084900EB59E6 /* VolunteerDetailDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BE954932CFB084900EB59E6 /* VolunteerDetailDataModel.swift */; };
+		8BE954962CFB101C00EB59E6 /* VolunteerApplyDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BE954952CFB101B00EB59E6 /* VolunteerApplyDataModel.swift */; };
+		8BE954982CFB142600EB59E6 /* AdoptDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BE954972CFB142600EB59E6 /* AdoptDataModel.swift */; };
+		8BE9549A2CFB170500EB59E6 /* AdoptDetailDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BE954992CFB170500EB59E6 /* AdoptDetailDataModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -82,6 +87,11 @@
 		8BD466682CFABB580023ED9D /* AdoptListCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdoptListCollectionViewCell.swift; sourceTree = "<group>"; };
 		8BD466692CFABB580023ED9D /* AdoptListCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AdoptListCollectionViewCell.xib; sourceTree = "<group>"; };
 		8BE9548D2CFAFC1F00EB59E6 /* HomeDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeDataModel.swift; sourceTree = "<group>"; };
+		8BE954912CFB04DA00EB59E6 /* VolunteerListDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VolunteerListDataModel.swift; sourceTree = "<group>"; };
+		8BE954932CFB084900EB59E6 /* VolunteerDetailDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VolunteerDetailDataModel.swift; sourceTree = "<group>"; };
+		8BE954952CFB101B00EB59E6 /* VolunteerApplyDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VolunteerApplyDataModel.swift; sourceTree = "<group>"; };
+		8BE954972CFB142600EB59E6 /* AdoptDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdoptDataModel.swift; sourceTree = "<group>"; };
+		8BE954992CFB170500EB59E6 /* AdoptDetailDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdoptDetailDataModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -188,6 +198,9 @@
 				8BD4665F2CFAAB470023ED9D /* VolunteerListCollectionViewCell.swift */,
 				8BD466602CFAAB470023ED9D /* VolunteerListCollectionViewCell.xib */,
 				8BD466632CFAB2A70023ED9D /* VolunteerDetailViewController.swift */,
+				8BE954912CFB04DA00EB59E6 /* VolunteerListDataModel.swift */,
+				8BE954932CFB084900EB59E6 /* VolunteerDetailDataModel.swift */,
+				8BE954952CFB101B00EB59E6 /* VolunteerApplyDataModel.swift */,
 			);
 			path = Volunteer;
 			sourceTree = "<group>";
@@ -196,9 +209,11 @@
 			isa = PBXGroup;
 			children = (
 				8BD466662CFAB9C40023ED9D /* AdoptViewController.swift */,
+				8BE954972CFB142600EB59E6 /* AdoptDataModel.swift */,
 				8BD466682CFABB580023ED9D /* AdoptListCollectionViewCell.swift */,
 				8BD466692CFABB580023ED9D /* AdoptListCollectionViewCell.xib */,
 				8BA4A0D22CFAC51200352665 /* AdoptDetailViewController.swift */,
+				8BE954992CFB170500EB59E6 /* AdoptDetailDataModel.swift */,
 			);
 			path = Adopt;
 			sourceTree = "<group>";
@@ -345,17 +360,22 @@
 				8BD4666B2CFABB580023ED9D /* AdoptListCollectionViewCell.swift in Sources */,
 				8B5059642CF9528F009202E6 /* LoginViewController.swift in Sources */,
 				8BD466622CFAAB470023ED9D /* VolunteerListCollectionViewCell.swift in Sources */,
+				8BE954962CFB101C00EB59E6 /* VolunteerApplyDataModel.swift in Sources */,
 				8BA4A0D72CFAD6A800352665 /* API+Extension.swift in Sources */,
 				8BD4665E2CFAAA330023ED9D /* VolunteerViewController.swift in Sources */,
 				8BA434482CF94AA70048B4EA /* AppDelegate.swift in Sources */,
+				8BE954982CFB142600EB59E6 /* AdoptDataModel.swift in Sources */,
+				8BE9549A2CFB170500EB59E6 /* AdoptDetailDataModel.swift in Sources */,
 				8B50596D2CF97522009202E6 /* CustomTabBarViewController.swift in Sources */,
 				8BD466642CFAB2A70023ED9D /* VolunteerDetailViewController.swift in Sources */,
+				8BE954942CFB084900EB59E6 /* VolunteerDetailDataModel.swift in Sources */,
 				8B5059662CF96A65009202E6 /* SignupViewController.swift in Sources */,
 				8BD466672CFAB9C40023ED9D /* AdoptViewController.swift in Sources */,
 				8BA4A0DB2CFAE9DC00352665 /* LoginDataModel.swift in Sources */,
 				8B5059682CF96E4C009202E6 /* SignupCompleteViewController.swift in Sources */,
 				8B5059712CF97763009202E6 /* HomeViewController.swift in Sources */,
 				8BA434492CF94AA70048B4EA /* SceneDelegate.swift in Sources */,
+				8BE954922CFB04DA00EB59E6 /* VolunteerListDataModel.swift in Sources */,
 				8B5059742CF99805009202E6 /* AdoptCollectionViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
